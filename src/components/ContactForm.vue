@@ -49,6 +49,7 @@ export default {
     },
     emits: ["submit:contact", "delete:contact"],
     props: {
+        mode: { type: String, required: true },
         contact: { type: Object, required: true }
     },
     data() {
@@ -71,7 +72,7 @@ export default {
                     "Số điện thoại không hợp lệ.")
         });
         return {
-            contactLocal: this.contact,
+            contactLocal: this.mode === 'add' ? {} : { ...this.contact },
             contactFormSchema,
         };
     },

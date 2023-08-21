@@ -14,7 +14,7 @@
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fas fa-redo"></i> Làm mới
                 </button>
-                <button class="btn btn-sm btn-success" @click="goToAddContact">
+                <button class="btn btn-sm btn-success" @click="goToAddContact()">
                     <i class="fas fa-plus"></i> Thêm mới
                 </button>
                 <button class="btn btn-sm btn-danger" @click="removeAllContacts">
@@ -116,8 +116,8 @@ export default {
             }
         },
 
-        goToAddContact() {
-            this.$router.push({ name: "contact.add" });
+        async goToAddContact() {
+            this.$router.push({ name: "contact.create" });
         }
     },
     mounted() {
